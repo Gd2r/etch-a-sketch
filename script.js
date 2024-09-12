@@ -3,14 +3,20 @@ const container = document.getElementById("container")
 // the function to make the divs with the same size
 function makegrid() {
 
+    clearGrid();
+
     // ask for grid size
-    let grid = prompt("Enter the Grid size");
+    let grid;
+    
+    do {
+        grid = prompt("Enter the Grid size (up to 100):");
+    } while (grid > 100 || grid <= 0);
+   
 
     let gridsize = grid * grid;
     for (let i =  0; i < gridsize; i++) {
         createdivs();
     }
-
 }
 
 function createdivs() {
@@ -19,3 +25,13 @@ function createdivs() {
     divs.classList.add("griditem");
 }
 
+
+function clearGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
+function resetgrid() {
+    makegrid();
+}
