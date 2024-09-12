@@ -23,6 +23,8 @@ function createdivs() {
     let divs = document.createElement("div");
     container.appendChild(divs);
     divs.classList.add("griditem");
+
+    divs.addEventListener("mouseover", changeColor)
 }
 
 
@@ -34,4 +36,9 @@ function clearGrid() {
 
 function resetgrid() {
     makegrid();
+}
+
+function changeColor(event) {
+    const selectedColor = colorPicker.value; 
+    event.target.style.backgroundColor = selectedColor;
 }
