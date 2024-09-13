@@ -20,7 +20,7 @@ function createGrid(grid) {
         createdivs(grid);
     }
 }
-
+// hello saif
 function createdivs(gridSize) {
     let divs = document.createElement("div");
     container.appendChild(divs);
